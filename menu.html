@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> <!--Required Meta tag--> 
+    <title>Forest Finds</title>
+    <link href="project.css" rel="stylesheet"/>
+
+    <script>
+    //ensures that javascript is run after the window is loaded
+        window.onload = function() {
+
+            var logo = document.getElementById("logo");
+            var nav = document.getElementById("nav_links");
+
+            window.onscroll = function() { //function activates on user scroll
+            if (document.body.scrollTop > 10
+                || document.documentElement.scrollTop > 10) {
+                logo.style.width = "0%"; //logo disappears on scroll
+                nav.style.padding = "0px 0px"; //padding for the nav bar reduces
+            } else {
+                logo.style.width = "12%";
+                nav.style.padding = "10px 10px";
+            }
+        };
+    };
+</script>
+</head>
+<!--Beginning of CSS Grid --> 
+<body> 
+
+    <!--Header--> 
+    <header class="main_header" id="header">
+        <img id="logo" src="./media/forest_logo.png" alt="Forest Finds Logo"/>
+        <nav id="nav_links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="giftcards.html">Gift cards</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <!--Wrapper for photo carousel-->
+        <div class="carousel-wrapper">
+
+            <!--Div wrappers for photo and respective caption text-->
+            <div class="photos">
+                <img class="fade" src="media/img_1.jpg" alt="food image" style="width:100%"> <!--Photo by Pesce Huang (https://unsplash.com/photos/YYuCpCrg7fE)--> 
+                <div class="text">Come</div>
+            </div>
+
+            <div class="photos">
+                <img class="fade" src="media/img_2.jpg" alt="food image" style="width:100%"> <!-- Photo by Emy (https://unsplash.com/photos/XoByiBymX20)-->
+                <div class="text">Dine</div>
+            </div>
+
+            <div class="photos">    
+                <img class="fade" src="media/img_3.jpg" alt="food image" style="width:100%"> <!--Photo by Davide Cantelli (https://unsplash.com/photos/jpkfc5_d-DI)-->
+                <div class="text">With</div>
+            </div>
+
+            <div class="photos">    
+                <img class="fade" src="media/img_4.jpg" alt="food image" style="width:100%"> <!--Photo by Eaters Collective (https://unsplash.com/photos/12eHC6FxPyg)-->
+                <div class="text">Us</div>
+            </div>
+        </div>
+        <br>
+
+        <!-- The dots/circles at the bottom of the carousel-->
+        <div style="text-align:center">
+            <span class="dot" onclick="current(1)"></span>
+            <span class="dot" onclick="current(2)"></span>
+            <span class="dot" onclick="current(3)"></span>
+            <span class="dot" onclick="current(4)"></span>
+        </div>
+
+        <script> 
+            //JavaScript for the image carousel
+            var index = 1;
+            show(index);
+
+            // Thumbnail image controls
+            function current(n) {
+                show(index=n);
+            }
+
+            function show(n) {
+                var i;
+                //array containing the photos plus caption divs
+                var photos = document.getElementsByClassName("photos");
+                //array containing the 'dots'
+                var dots = document.getElementsByClassName("dot");
+
+                //if n becomes larger than the array of photos,
+                //set the index back to 1
+                if (n > photos.length) {
+                    index = 1;
+                }
+
+                //if n becomes smaller than the array of photos,
+                //set the index to the length of the array
+                if (n < 1) {
+                    index = photos.length;
+                }
+
+                for (i = 0; i < photos.length; i+=1) {
+                    photos[i].style.display = "none";
+                }
+
+                for (i = 0; i < dots.length; i+=1) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                photos[index-1].style.display = "block";
+                dots[index-1].className += " active";
+            }
+        </script>
+
+        <div class="menu_container">
+            <h1>Spring Menu</h1>
+            
+            <div class="appetizers">
+            <h2><span>Appetizers</span></h2>
+            
+            <h3>From the Land</h3>
+            <p>Chicken liver parfait on a wild leek and morels silky puree’... 20</p>
+            
+            <h3>From the Sea</h3>
+            <p>Fresh BC oysters accompanied by a red huckleberry and high-bush cranberry chowder... 18</p>
+            
+            <h3>From the Earth</h3>
+            <p>Steamed dandelions caskets filled with a savory blueberry compote and sprinkled with wild rice herbed panko...17</p> <br>
+            </div>
+
+            <div class="Entrées">
+            <h2><span>Entrées</span></h2>
+            
+            <h3>From the Land</h3>
+            <p>Pan seared Two Rivers beef sirloin steak, complemented by sweet and sour mushroom chutney, topped with lovage... 35</p>
+            <p>Tandoori breast of pigeon, topped with pickled vegetables, garnished with fresh high-bush cranberries... 46</p>
+            
+            <h3>From the Sea</h3>
+            <p>Poached maple coho salmon, served on baked wild rice, drizzled with elderflower vinaigrette... 33</p>
+            
+            <h3>From the Earth</h3>
+            <p>Pureed wild rice in foraged mushroom sauce, topped with crispy stinging nettle and a touch of hazelnut... 26</p>
+            <p>Marinated fiddleheads on a bed of dandelions and glazed wild asparagus... 27</p> <br>
+            </div>
+
+            <div class="Desserts">
+            <h2><span>Desserts</span></h2>
+            
+            <p>Upside down blueberry pie sprinkled with hints of hazelnut… 12</p>
+            
+            <p>Black walnut and high-bush cranberry bite-sized crispy tarts… 12</p>
+            </div>
+        </div>
+
+
+    <!--Footer --> 
+    <footer class="footer"> 
+        <ul class="contact_us">
+            <li><a href="notimplemented">eat@forestfinds.ca</a></li>
+            <li><a href="notimplemented">(604)-111-1111</a></li>
+            <li>6pm to 10pm every day</li>
+            <li>145 Main st., Vancouver, BC</li>
+        </ul>
+
+        <form class="sign_up">
+            <label for="signup">Sign up to receive our newsletter:</label> <br>
+            <input type="text" name="signup" id="signup" placeholder="Your email address"> <br>
+            <input type="submit" id= "btn1" value="Subscribe">
+        </form>
+
+        <ul class="social_links">
+            <li><a href="notimplemented">Twitter</a></li>
+            <li><a href="notimplemented">Instagram</a></li>
+            <li><a href="notimplemented">Facebook</a></li>
+        </ul>
+    </footer>
+</body> <!--End of CSS Grid --> 
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> <!--Required Meta tag--> 
+    <title>Forest Finds</title>
+    <link href="project.css" rel="stylesheet"/>
+
+    <script>
+        //ensures that javascript is run after the window is loaded
+        window.onload = function() {
+
+            var logo = document.getElementById("logo");
+            var nav = document.getElementById("nav_links");
+
+            window.onscroll = function() { //function activates on user scroll
+            if (document.body.scrollTop > 10
+                || document.documentElement.scrollTop > 10) {
+                logo.style.width = "0%"; //logo disappears on scroll
+                nav.style.padding = "0px 0px"; //padding for the nav bar reduces
+            } else {
+                logo.style.width = "12%";
+                nav.style.padding = "10px 10px";
+            }
+        };
+    };
+
+</script>
+</head>
+<!--Beginning of CSS Grid --> 
+<body class="grid_container"> 
+
+    <!--Header--> 
+    <header class="main_header" id="header">
+        <img id="logo" src="./media/forest_logo.png" alt="Forest Finds Logo"/>
+        <nav id="nav_links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="giftcards.html">Gift cards</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!--Main body --> 
+    <div class="main">
+        <div class="text_over_image">
+            <h1>Forest Finds</h1> <br>
+            <h1>From the BC forests, directly to our kitchen.</h1>
+        </div>
+    </div>
+
+    <div class="about">
+        <h2>About Forest Finds</h2>
+        <p>Forest Finds co. was established in 2008 by Roberto Frizzi and Emily Miller. 
+            Roberto Frizzi is an Italian immigrant who moved to Canada in 1990, where he met Emily Miller. Roberto has been working in the hospitality industry for over 15 years.
+            In 1998, after having a child, tired of the hectic city life, they decided to raise her in the woods. They supported their family tree planting and mushroom picking.
+            In 2005, they moved back to Vancouver, but their passion for the Canadian forest was still alive and burning.
+            They then used their savings to purchase a food truck, and founded Forest Finds to bring their love for the woods into the city. In 2012 they were able to open their first restaurant.
+        </p>
+    </div>
+    <img class="about_image" src="./media/cooking.jpg" alt="Cooking in a pan"/> <!--Photo by Max Delsid URL: https://unsplash.com/photos/0geTqSZ76Xg--> 
+
+    <img class="foraging_image" src="./media/berries.jpg" alt="Wild berries"/> <!--Photo by Beth Jnr (https://unsplash.com/photos/bgFJ8_QBs0k)-->
+    <div class="foraging">
+        <h2>The Forager's way</h2>
+        <p> It is a well known fact that we should be kind to nature. By foraging, we accept everything the nature offers us and work our menus around that. This is why our menu changes so often, 
+            depending on the season and on the food's availability. Foraging is also an excellent way to create jobs for our community, and increases our awareness in regards to the ecosystem 
+            sorrounding us. What is there not to like?
+        </p>
+    </div>
+
+    <!--Footer --> 
+    <footer class="footer"> 
+        <ul class="contact_us">
+            <li><a href="notimplemented">eat@forestfinds.ca</a></li>
+            <li><a href="notimplemented">(604)-111-1111</a></li>
+            <li>6pm to 10pm every day</li>
+            <li>145 Main st., Vancouver, BC</li>
+        </ul>
+
+        <form class="sign_up">
+            <label for="signup">Sign up to receive our newsletter:</label> <br>
+            <input type="text" name="signup" id="signup" placeholder="Your email address"> <br>
+            <input type="submit" id= "btn1" value="Subscribe">
+        </form>
+
+        <ul class="social_links">
+            <li><a href="notimplemented">Twitter</a></li>
+            <li><a href="notimplemented">Instagram</a></li>
+            <li><a href="notimplemented">Facebook</a></li>
+        </ul>
+    </footer>
+</body> <!--End of CSS Grid --> 
+</html>

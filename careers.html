@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> <!--Required Meta tag--> 
+	<title>Forest Finds</title>
+	<link href="project.css" rel="stylesheet"/>
+
+	<script>
+//ensures that javascript is run after the window is loaded
+        window.onload = function() {
+
+            var logo = document.getElementById("logo");
+            var nav = document.getElementById("nav_links");
+
+            window.onscroll = function() { //function activates on user scroll
+            if (document.body.scrollTop > 10
+                || document.documentElement.scrollTop > 10) {
+                logo.style.width = "0%"; //logo disappears on scroll
+                nav.style.padding = "0px 0px"; //padding for the nav bar reduces
+            } else {
+                logo.style.width = "12%";
+                nav.style.padding = "10px 10px";
+            }
+        };
+    };
+</script>
+</head>
+<!--Beginning of CSS Grid --> 
+<body class="grid_container"> 
+
+	<!--Header--> 
+	<header class="main_header" id="header">
+		<img id="logo" src="./media/forest_logo.png" alt="Forest Finds Logo"/>
+		<nav id="nav_links">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="menu.html">Menu</a></li>
+				<li><a href="careers.html">Careers</a></li>
+				<li><a href="giftcards.html">Gift cards</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+
+	<div class="text_over_image" id="text_careers">
+		<h1>Careers</h1> 
+	</div>
+
+	<div class="positions_available">
+		<!--Position available 1-->
+		<div class="position">
+		<h2>Bartender - Front of the House</h2> <!--Please note, job description was copied an pasted from a template found on: https://resources.workable.com/bartender-job-description#:~:text=Bartender%20responsibilities%20include%3A,and%20preferences%20and%20making%20recommendations-->
+		<p>We are looking for an enthusiastic Bartender to provide an excellent guest drinking experience. Good Bartenders will be able to create classic and innovative drinks exceeding customers’ needs and expectations. Compensation includes salary and tips. <br> Responsibilities include: </p>
+		<ul class="responsibilities">
+			<li>Preparing alcoholic or non-alcoholic beverages for bar and patrons</li>
+			<li>Interacting with customers, taking orders and serving snacks and drinks</li>
+			<li>Assessing bar customers’ needs and preferences and making recommendations</li>
+		</ul>
+		</div>
+
+		<hr>
+
+		<!--Position available 2-->
+		<div class="position">
+		<h2>Server - Front of the House</h2> <!--Please note, job description was copied an pasted from a template found on: https://resources.workable.com/restaurant-server-job-description-->
+		<p>We are looking for a competent Restaurant Server to take and deliver orders. You’ll be the face of our restaurant and responsible for our customers’ experiences. Food server responsibilities include ensuring our tables are clean and tidy when guests arrive, presenting menus and serving food and beverages. You need to be quick on your feet (literally and metaphorically) and have a polite and friendly attitude. If you enjoy talking to people and thrive in a fast-paced workplace, we’d like to meet you. <br> Responsibilities include: </p>
+		<ul class="responsibilities">
+			<li>Prepare restaurant tables with special attention to sanitation and order</li>
+			<li>Presenting menus, serving and helping customers select food/beverages</li>
+			<li>Answer questions or make recommendations for complementary products</li>
+		</ul>
+	</div>
+
+		<hr>
+
+		<!--Position available 3-->
+		<div class="position">
+		<h2>Cook - Back of the House</h2> <!--Please note, job description was copied an pasted from a template found on: https://resources.workable.com/cook-job-description-->
+		<p>We are looking for a skilled Cook to prepare delicious meals according to menu. You will cook dishes that will delight our customers with their taste and timely delivery. An excellent cook must be able to follow instructions in cooking and delivering well-prepared meals. They must be deft in moving around the kitchen and apt in multi-tasking. Experience in using various ingredients and cooking techniques is also important. <br> Responsibilities include: </p>
+		<ul class="responsibilities">
+			<li>Setting up workstations with all needed ingredients and cooking equipment</li>
+			<li>Preparing ingredients to use in cooking</li>
+			<li>Cooking food in various utensils or grillers</li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="note">
+		<p> <br> If interested, please email your resume to eat@forestfinds.ca.</p>
+	</div>
+	
+
+	<!--Footer --> 
+	<footer class="footer"> 
+		<ul class="contact_us">
+			<li><a href="notimplemented">eat@forestfinds.ca</a></li>
+			<li><a href="notimplemented">(604)-111-1111</a></li>
+			<li>6pm to 10pm every day</li>
+			<li>145 Main st., Vancouver, BC</li>
+		</ul>
+
+		<form class="sign_up">
+			<label for="signup">Sign up to receive our newsletter:</label> <br>
+			<input type="text" name="signup" id="signup" placeholder="Your email address"> <br>
+			<input type="submit" id= "btn1" value="Subscribe">
+		</form>
+
+		<ul class="social_links">
+			<li><a href="notimplemented">Twitter</a></li>
+			<li><a href="notimplemented">Instagram</a></li>
+			<li><a href="notimplemented">Facebook</a></li>
+		</ul>
+	</footer>
+</body> <!--End of CSS Grid --> 
+</html>

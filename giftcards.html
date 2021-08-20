@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> <!--Required Meta tag--> 
+    <title>Forest Finds</title>
+    <link href="project.css" rel="stylesheet"/>
+
+    <script>
+//ensures that javascript is run after the window is loaded
+        window.onload = function() {
+
+            var logo = document.getElementById("logo");
+            var nav = document.getElementById("nav_links");
+
+            window.onscroll = function() { //function activates on user scroll
+            if (document.body.scrollTop > 10
+                || document.documentElement.scrollTop > 10) {
+                logo.style.width = "0%"; //logo disappears on scroll
+                nav.style.padding = "0px 0px"; //padding for the nav bar reduces
+            } else {
+                logo.style.width = "12%";
+                nav.style.padding = "10px 10px";
+            }
+        };
+    };
+</script>
+</head>
+<!--Beginning of CSS Grid --> 
+<body class="grid_container"> 
+
+    <!--Header--> 
+    <header class="main_header" id="header">
+        <img id="logo" src="./media/forest_logo.png" alt="Forest Finds Logo"/>
+        <nav id="nav_links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="giftcards.html">Gift cards</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="text_over_image" id="text_gift">
+        <h1>Gift Cards</h1> 
+    </div> 
+
+    <h2 id="covid_message">please note that due to the current covid-19 pandemic we only offer take-out. We are hoping to be back soon. In the meantime, stay safe and be well!</h2>
+
+    <img class="gift_image" src="./media/gift1.jpg" alt="a wrapped gift"/> <!--Photo by Annie Spratt(https://unsplash.com/photos/HZuJfZlXVQY)-->
+    <div class="gift_text">
+        <h2>Forest Finds - Gift Card</h2>
+        <p>A perfect gift for any food and nature lover. Simply fill in the form below and press the "buy" button. <br> <br>Forest Finds gift cards can be used for both dine in and take-out.</p>
+        
+        <form>
+            <!--form items for gift card amount-->
+            <label for="box">Gift card amount: </label><br>
+            <button type="button" onclick="minus()">-</button> 
+            <input type="text" id="box" value="50">
+            <button type="button" onclick="plus()">+</button> <br> <br>
+            
+            <!--form items for personalised message-->
+            <label for="message">Add a personalised message (max 4 lines): </label> <br>
+            <textarea id="message" name="message" rows="4" cols="50">Enter your personalised message here...</textarea> <br><br>
+
+            <!--form items for recipient details-->
+            <label for="name">Recipient name: </label> <br>
+            <input type="text"  id="name" name="name"  placeholder="Name"> <br><br>
+
+            <label for="email">Recipient email: </label> <br>
+            <input type="text"  id="email" name="email"  placeholder="email address"> <br><br>
+
+            <!--submit-->
+            <input type="submit" id= "btn2" value="Order here">
+        </form>
+        <script> //simple script to update the value in the text box when either the plus or minus button have been clicked
+            var box = document.querySelector("#box");
+
+            function plus() {
+                box.value++;
+            }
+
+            function minus() {
+                box.value--;
+            }
+        </script>
+    </div>
+
+    <!--Footer --> 
+    <footer class="footer"> 
+        <ul class="contact_us">
+            <li><a href="notimplemented">eat@forestfinds.ca</a></li>
+            <li><a href="notimplemented">(604)-111-1111</a></li>
+            <li>6pm to 10pm every day</li>
+            <li>145 Main st., Vancouver, BC</li>
+        </ul>
+
+        <form class="sign_up">
+            <label for="signup">Sign up to receive our newsletter:</label> <br>
+            <input type="text" name="signup" id="signup" placeholder="Your email address"> <br>
+            <input type="submit" id= "btn1" value="Subscribe">
+        </form>
+
+        <ul class="social_links">
+            <li><a href="notimplemented">Twitter</a></li>
+            <li><a href="notimplemented">Instagram</a></li>
+            <li><a href="notimplemented">Facebook</a></li>
+        </ul>
+    </footer>
+</body> <!--End of CSS Grid --> 
+</html>
