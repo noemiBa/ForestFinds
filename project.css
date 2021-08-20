@@ -1,0 +1,440 @@
+/*CSS that applies to all the pages*/
+* {
+	color: #f7f5f5; 
+	font-variant: small-caps;
+}
+
+body {
+	margin:10px;
+	background-color: #000000; 
+}
+
+ul { 
+	list-style: none;
+}
+
+ul > li > a {
+	text-decoration: none; /*so that the links are not underlined*/
+}
+
+ul > li > a:hover {
+	color: #bad6b6; 
+}
+
+
+
+/*CSS For Index.html*/
+.grid_container {
+	display: grid; /*CSS grid*/
+	grid-template-columns: repeat(5, minmax(10px, 1fr)); /*five columns*/ 
+	grid-template-areas: 
+	"header header header header header"  /*assigning an area to each element in the webpage*/
+	"main main main main main "
+	"main  main  main  main  main"
+	"about about about  img img "
+	"img2 img2 forage forage forage"
+	"foot foot foot foot foot"
+	"foot foot foot foot foot";
+	grid-gap: 50px;
+}
+
+/*CSS for Header*/
+.main_header {
+	grid-area: header; 
+	text-align: center;
+	
+	/*sticky navbar that shrinks on scroll*/
+	overflow: hidden;
+	background-color: #000000;
+	position: fixed;  /* Fixed position at the top of the page */
+	width: 100%;
+	top: 0;
+	z-index: 1; /*so that it is visible over other items*/
+}
+
+.main_header > img { /*the width taken by the logo*/
+	width: 12%;
+	transition: 0.5s;
+}
+
+#nav_links {
+	width:70%; 
+	margin-left: auto; 
+	margin-right: auto; 
+	padding: 10px 10px;
+
+}
+
+#nav_links > ul { /*display the nav links in a single line with some space around them*/
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap; 
+}
+
+.main{ /*jumbotron-like: text over image*/
+	grid-area: main;
+	
+	/*need to specify height and width for the background image to show correctly*/
+	background: #fff url("./media/forest.jpg"); 
+	width: 100%;
+	height: 40vh;
+	background-size: cover;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-top: 20%; 
+	padding-bottom: 20%;
+}
+
+.text_over_image{ 
+	padding: 3%; 
+	text-align: center;
+	/*make background semi-transparent to ensure text is readable*/
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+	background: rgba(204, 204, 204, 0.5);
+	word-wrap: break-word;
+
+}
+
+
+.about {
+	padding-top: 5%; 
+	grid-area: about;
+	padding-left: 12%;
+	padding-right: 12%;
+}
+
+.about_image {
+	grid-area: img; 
+	width: 100%;
+	margin-right:  3%;
+}
+
+.foraging_image {
+	grid-area: img2; 
+	width: 100%; 
+}
+
+.foraging {
+	grid-area: forage;
+	padding-left: 12%;
+	padding-right: 12%;
+	padding-top: 8%;
+}
+
+img:hover { 
+  filter: gray; /* IE6-9 */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS for Footer*/
+.footer {
+	grid-area: foot;
+	
+	display: grid; /*CSS grid within main grid*/
+	grid-template-columns: 33% 30% 30%; /*three columns equal size*/ 
+	grid-template-areas: 
+	"contact subscribe social";  /*assigning an area to each element in the webpage*/
+	grid-gap: 10px;
+	text-align: center;
+}
+
+.contact_us {
+	grid-area: contact; 
+}
+
+.contact_us > li {
+	margin: 2% 0;
+}
+
+.sign_up {
+	grid-area: subscribe;
+	padding-top: 4%;
+
+}
+
+.footer > form > input {
+	margin-top: 3%;
+}
+
+input[type="submit"] {
+	background-color: #000000; 
+	padding: 2%;
+}
+
+input[type="text"] {
+	color: #000000;
+}
+
+input[type="submit"]:hover {
+	color: #bad6b6;
+}
+
+.social_links {
+	grid-area: social;
+}
+
+.social_links > li {
+	margin: 2% 0;
+}
+
+/*CSS for Menu Page*/
+.carousel-wrapper {
+  margin: auto;
+  overflow: hidden;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.carousel-wrapper * {
+  box-sizing: border-box; /*border box property allows for any padding and border to be included in the elements' total width and height*/
+}
+
+.photos { /*By default, need to hide all the items until the script initiates the carousel*/
+  display: none; 
+  width: 100%;
+}
+
+.photos > img {
+	max-height: 570px;
+}
+
+/* Caption text */
+.text {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  /*make background semi-transparent to ensure text is readable*/
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.5);
+  font-size: 2em; 
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #bad6b6;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.menu_container {
+	text-align: center;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+ .menu_container > h1, h3 {
+	color: #bad6b6;
+}
+
+.menu_container > div > h2 {
+   border-bottom: 1px solid #bad6b6; /*use the border to draw the line around the h2 elements*/
+   line-height: 0.1em; 
+   width: 80%;
+   margin-left: auto; 
+   margin-right: auto; 
+
+}
+
+h2 span { 
+    background:#000000; /*no line behind the actual h2 text (background is black)*/
+    padding:0 10px;
+    color: #bad6b6; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Careers Page CSS*/
+#text_careers {
+	grid-area: header;
+	
+	/*need to specify height and width for the background image to show correctly*/
+	overflow: auto;
+	background: #fff url("./media/forest1.jpg"); 
+	height: 60vh;
+	background-size: cover;
+}
+
+#text_careers > h1 {
+	margin-top: 20%; 
+	text-align: center;
+	/*make background semi-transparent to ensure text is readable*/
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+	background: rgba(204, 204, 204, 0.3);
+	word-wrap: break-word;
+	font-size: 3em;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.note {
+	grid-area: about; 
+}
+
+.positions_available {
+	grid-area: main;
+	position: relative;
+	display: flex; 
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.position {
+	display: inline-block;
+	width: 30%;
+	margin: 10px; 
+}
+
+.position > h2 {
+	color: #bad6b6; 
+}
+
+.position > ul {
+	list-style: circle;
+}
+
+.position > ul > li {
+	margin-top: 2%;
+}
+
+@media (max-width: 800px) { /*if the screen size is 800 px or smaller, apply the following properties instead*/
+	.positions_available { /*stack on top of each other if viewed on a smaller screen*/
+        display: block;	
+       
+        overflow: hidden;
+	}
+
+	#text_careers {
+		overflow: hidden;
+		max-width: 700px;
+	}
+
+	.position {
+		padding-left: 5%; 
+		padding-right: 5%;
+		width: 90%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*CSS for Gift Cards page*/
+#text_gift {
+	grid-area: header;
+	
+	/*need to specify height and width for the background image to show correctly*/
+	overflow: auto;
+	background: #fff url("./media/gift.jpg"); /*Photo by Nina Mercado (https://unsplash.com/photos/_qN6tmGjmtg)*/
+	height: 60vh;
+	background-size: cover;
+}
+
+#text_gift > h1 {
+	margin-top: 20%; 
+	text-align: center;
+	/*make background semi-transparent to ensure text is readable*/
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+	background: rgba(204, 204, 204, 0.3);
+	word-wrap: break-word;
+	font-size: 3em;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.gift_image {
+	grid-area: img;
+}
+
+button {
+	background-color: #000000; 
+}
+
+button:hover {
+	color: #bad6b6; 
+}
+
+textarea {
+	color: black;
+}
+
+.gift_text {
+	grid-area: forage;
+	padding-left: 12%;
+	padding-right: 12%;
+}
+
+.gift_image {
+	grid-area: img2; 
+	width: 100%; 
+	height: 85%;
+}
+
+#covid_message {
+	grid-area: main; 
+	margin-top: 2%;
+	text-align: center;
+	word-wrap: break-word;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-bottom: -2%;
+	color: #e3a6a6;
+}
